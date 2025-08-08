@@ -120,32 +120,38 @@ export const Hero = () => {
             </div>
           </div>
 
-          {/* Right */}
+          {/* Right - Video */}
           <div className="relative animate-fade-in">
             <div
-              className="rounded-2xl p-6 shadow-xl backdrop-blur-md"
+              className="rounded-2xl p-4 shadow-xl backdrop-blur-md"
               style={{
                 border: `1px solid ${brandGold}55`,
                 backgroundColor: `${brandTeal}ee`,
               }}
             >
               <div
-                className="aspect-[4/3] w-full rounded-xl flex items-center justify-center"
+                className="aspect-[4/3] w-full rounded-xl overflow-hidden"
                 style={{
                   background: `linear-gradient(135deg, ${brandTeal}33, ${brandGold}33)`,
                 }}
               >
-                <img
-                  src="/images/phone-mockup.png"
-                  alt="BuzRyde App Preview"
-                  className="w-3/4 drop-shadow-lg"
+                <video
+                  src="/videos/hero-animation.mp4"
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
                 />
               </div>
               <div className="mt-4 grid grid-cols-3 gap-3 text-xs">
                 <div className="rounded-lg p-3 text-center bg-white/10 text-white">
                   Upfront fares
                 </div>
-                <div className="rounded-lg p-3 text-center" style={{ backgroundColor: `${brandGold}33`, color: brandLight }}>
+                <div
+                  className="rounded-lg p-3 text-center"
+                  style={{ backgroundColor: `${brandGold}33`, color: brandLight }}
+                >
                   24/7 support
                 </div>
                 <div className="rounded-lg p-3 text-center bg-black/30 text-white">

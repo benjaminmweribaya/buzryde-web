@@ -12,7 +12,7 @@ const testimonials = [
     author: "Amelia",
     location: "Toronto",
     role: "Rider",
-    avatar: "/images/avatars/amelia.jpg",
+    avatar: "/images/amelia-rider.jpg",
     rating: 5,
   },
   {
@@ -20,7 +20,7 @@ const testimonials = [
     author: "Noah",
     location: "Vancouver",
     role: "Driver",
-    avatar: "/images/avatars/noah.jpg",
+    avatar: "/images/noah-driver.jpg",
     rating: 5,
   },
   {
@@ -28,7 +28,7 @@ const testimonials = [
     author: "Sofia",
     location: "Calgary",
     role: "Rider",
-    avatar: "/images/avatars/sofia.jpg",
+    avatar: "/images/sofia-rider.jpg",
     rating: 4,
   },
   {
@@ -36,7 +36,7 @@ const testimonials = [
     author: "Liam",
     location: "Ottawa",
     role: "Rider",
-    avatar: "/images/avatars/liam.jpg",
+    avatar: "/images/liam-rider.jpg",
     rating: 5,
   },
 ];
