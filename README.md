@@ -1,73 +1,320 @@
-# Welcome to your Lovable project
+# **BuzRyde Website**
 
-## Project info
+> Official website for **BuzRyde**, a modern ridesharing platform for Canadian cities — built with a focus on performance, accessibility, and brand consistency.
 
-**URL**: https://lovable.dev/projects/3cc2d702-ab2a-4560-b959-4aa7cf5650d3
+---
 
-## How can I edit this code?
+## **Table of Contents**
 
-There are several ways of editing your application.
+1. [Overview](#overview)
+2. [Features](#features)
+3. [Tech Stack](#tech-stack)
+4. [Folder Structure](#folder-structure)
+5. [Getting Started](#getting-started)
+6. [Environment Variables](#environment-variables)
+7. [Development Workflow](#development-workflow)
+8. [Brand Guidelines](#brand-guidelines)
+9. [Pages & Components](#pages--components)
+10. [Styling Conventions](#styling-conventions)
+11. [Testing](#testing)
+12. [Deployment](#deployment)
+13. [Contributing](#contributing)
+14. [License](#license)
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/3cc2d702-ab2a-4560-b959-4aa7cf5650d3) and start prompting.
+## **Overview**
 
-Changes made via Lovable will be committed automatically to this repo.
+The **BuzRyde Website** is a fully responsive web application that serves as the public-facing marketing and information platform for the BuzRyde ride-hailing service. It includes marketing pages, driver recruitment forms, legal policy pages, and a branded UI designed for clarity and trust.
 
-**Use your preferred IDE**
+The project is built with modern React tooling, follows accessibility best practices, and has been optimized for speed, mobile performance, and SEO.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## **Features**
 
-Follow these steps:
+* **Responsive Layout** — Optimized for mobile, tablet, and desktop.
+* **Brand Integration** — Consistent use of official brand colors and logo across all pages.
+* **SEO Optimized** — Meta tags and structured data for better search visibility.
+* **Accessible Navigation** — Keyboard-friendly, ARIA-compliant menu.
+* **Driver Interest Form** — Lead capture form for potential BuzRyde drivers.
+* **Contact Form** — Customer inquiry form with validation.
+* **Privacy Policy Page** — Clear breakdown of data handling practices.
+* **Performance-Oriented** — Lightweight, modern components with minimal render overhead.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## **Tech Stack**
 
-# Step 3: Install the necessary dependencies.
-npm i
+* **Frontend Framework**: [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+* **Routing**: [React Router](https://reactrouter.com/)
+* **Styling**: [Tailwind CSS](https://tailwindcss.com/) + custom brand colors
+* **Icons**: [Lucide React](https://lucide.dev/)
+* **Forms**: Custom form components with validation
+* **SEO**: Custom `<SEO>` component for meta tags
+* **Build Tool**: Vite or CRA (depending on project setup)
+* **Hosting**: Compatible with Netlify, Vercel, or any static hosting provider
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+---
+
+## **Folder Structure**
+
+```
+.
+├── README.md
+├── components.json
+├── eslint.config.js
+├── index.html
+├── package-lock.json
+├── package.json
+├── postcss.config.js
+├── public
+│   ├── favicon.ico
+│   ├── images
+│   │   ├── appstore-badge.svg
+│   │   ├── buzryde-logo.jpg
+│   │   └── google-play-badge.png
+│   ├── placeholder.svg
+│   └── robots.txt
+├── src
+│   ├── App.css
+│   ├── App.tsx
+│   ├── components
+│   │   ├── SEO.tsx
+│   │   ├── forms
+│   │   │   ├── ContactForm.tsx
+│   │   │   └── DriverInterestForm.tsx
+│   │   ├── layout
+│   │   │   ├── Layout.tsx
+│   │   │   ├── SiteFooter.tsx
+│   │   │   └── SiteHeader.tsx
+│   │   ├── sections
+│   │   │   ├── Hero.tsx
+│   │   │   └── Testimonials.tsx
+│   │   └── ui
+│   │       ├── accordion.tsx
+│   │       ├── alert-dialog.tsx
+│   │       ├── alert.tsx
+│   │       ├── aspect-ratio.tsx
+│   │       ├── avatar.tsx
+│   │       ├── badge.tsx
+│   │       ├── breadcrumb.tsx
+│   │       ├── button.tsx
+│   │       ├── calendar.tsx
+│   │       ├── card.tsx
+│   │       ├── carousel.tsx
+│   │       ├── chart.tsx
+│   │       ├── checkbox.tsx
+│   │       ├── collapsible.tsx
+│   │       ├── command.tsx
+│   │       ├── context-menu.tsx
+│   │       ├── dialog.tsx
+│   │       ├── drawer.tsx
+│   │       ├── dropdown-menu.tsx
+│   │       ├── form.tsx
+│   │       ├── hover-card.tsx
+│   │       ├── input-otp.tsx
+│   │       ├── input.tsx
+│   │       ├── label.tsx
+│   │       ├── menubar.tsx
+│   │       ├── navigation-menu.tsx
+│   │       ├── pagination.tsx
+│   │       ├── popover.tsx
+│   │       ├── progress.tsx
+│   │       ├── radio-group.tsx
+│   │       ├── resizable.tsx
+│   │       ├── scroll-area.tsx
+│   │       ├── select.tsx
+│   │       ├── separator.tsx
+│   │       ├── sheet.tsx
+│   │       ├── sidebar.tsx
+│   │       ├── skeleton.tsx
+│   │       ├── slider.tsx
+│   │       ├── sonner.tsx
+│   │       ├── switch.tsx
+│   │       ├── table.tsx
+│   │       ├── tabs.tsx
+│   │       ├── textarea.tsx
+│   │       ├── toast.tsx
+│   │       ├── toaster.tsx
+│   │       ├── toggle-group.tsx
+│   │       ├── toggle.tsx
+│   │       ├── tooltip.tsx
+│   │       └── use-toast.ts
+│   ├── config
+│   │   └── site.ts
+│   ├── hooks
+│   │   ├── use-mobile.tsx
+│   │   └── use-toast.ts
+│   ├── index.css
+│   ├── lib
+│   │   └── utils.ts
+│   ├── main.tsx
+│   ├── pages
+│   │   ├── About.tsx
+│   │   ├── Contact.tsx
+│   │   ├── Download.tsx
+│   │   ├── Drivers.tsx
+│   │   ├── FAQs.tsx
+│   │   ├── Index.tsx
+│   │   ├── NotFound.tsx
+│   │   ├── Privacy.tsx
+│   │   ├── Services.tsx
+│   │   ├── Terms.tsx
+│   │   └── TestimonialsPage.tsx
+│   └── vite-env.d.ts
+├── tailwind.config.ts
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+└── vite.config.ts
 ```
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## **Getting Started**
 
-**Use GitHub Codespaces**
+### **1. Clone the repository**
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```bash
+git clone https://github.com/yourusername/buzryde-web.git
+cd buzryde-web
+```
 
-## What technologies are used for this project?
+### **2. Install dependencies**
 
-This project is built with:
+```bash
+npm install
+# or
+yarn install
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### **3. Start the development server**
 
-## How can I deploy this project?
+```bash
+npm run dev
+# or
+yarn dev
+```
 
-Simply open [Lovable](https://lovable.dev/projects/3cc2d702-ab2a-4560-b959-4aa7cf5650d3) and click on Share -> Publish.
+The app will be available at **[http://localhost:5173/](http://localhost:5173/)** (Vite) or **[http://localhost:3000/](http://localhost:3000/)** (CRA).
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
+## **Environment Variables**
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Create a `.env` file in the root directory and configure any required variables:
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+```
+VITE_API_BASE_URL=https://api.buzryde.com
+VITE_FORM_SUBMIT_KEY=your_form_service_key
+```
+
+---
+
+## **Development Workflow**
+
+1. **Branching**: Create feature branches using the format `feat/feature-name` or `fix/bug-description`.
+2. **Code Style**: Follow ESLint + Prettier configurations (run `npm run lint` before commits).
+3. **Commits**: Use [Conventional Commits](https://www.conventionalcommits.org/) for clear history.
+4. **Testing**: Add tests where applicable before PR submission.
+5. **Pull Requests**: All PRs must be reviewed and pass automated checks before merging.
+
+---
+
+## **Brand Guidelines**
+
+* **Colors**:
+
+  * `brandTeal = #337A75`
+  * `brandGold = #F4B400`
+  * `brandLight = #F5F5F5`
+* **Logo**:
+
+  * Location: `/public/images/buzryde-logo.jpg`
+  * Used in `SiteHeader` and other branding placements.
+* **Typography**:
+
+  * Headings: Bold, clear sans-serif.
+  * Body: Neutral sans-serif with legible contrast.
+* **Spacing**:
+
+  * Consistent use of Tailwind spacing units for clean layouts.
+
+---
+
+## **Pages & Components**
+
+### **Main Pages**
+
+* **Home** — Hero section, features, and CTA.
+* **Drivers** — Recruitment details, driver benefits, registration form.
+* **Contact** — Inquiry form with validation.
+* **Privacy Policy** — Detailed legal and data protection information.
+
+### **Core Components**
+
+* **`SEO`** — Handles title, description, and meta tags.
+* **`SiteHeader`** — Responsive navigation with logo.
+* **Form Components** — DriverInterestForm & ContactForm.
+* **UI Elements** — Button, Card, Separator, Iconography.
+
+---
+
+## **Styling Conventions**
+
+* **Tailwind Utility-First**: Use Tailwind classes for styling.
+* **Brand Colors**: Always use `brandTeal`, `brandGold`, and `brandLight` constants.
+* **Responsive First**: Design for mobile and scale up.
+* **Accessibility**: Ensure sufficient contrast and semantic HTML.
+
+---
+
+## **Testing**
+
+* **Manual Testing**: Check all pages on mobile and desktop views.
+* **Browser Support**: Chrome, Firefox, Safari, Edge.
+* **Performance**: Lighthouse scores should remain above 90 for Performance, Accessibility, SEO.
+
+---
+
+## **Deployment**
+
+### Deploying to Vercel
+
+```bash
+npm run build
+vercel deploy
+```
+
+### Deploying to Netlify
+
+```bash
+npm run build
+netlify deploy
+```
+
+The build output is located in `/dist` (Vite) or `/build` (CRA).
+
+---
+
+## **Contributing**
+
+We welcome contributions!
+
+1. Fork the repo
+2. Create a feature branch (`git checkout -b feat/new-feature`)
+3. Commit changes (`git commit -m "feat: add new feature"`)
+4. Push branch (`git push origin feat/new-feature`)
+5. Open a Pull Request
+
+---
+
+## **License**
+
+This project is licensed under the **MIT License**.
+See [LICENSE](LICENSE) for details.
+
+---
+
+
