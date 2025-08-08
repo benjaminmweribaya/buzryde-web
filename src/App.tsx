@@ -5,7 +5,17 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-
+import Layout from "./components/layout/Layout";
+import About from "./pages/About";
+import Services from "./pages/Services";
+import FAQs from "./pages/FAQs";
+import Contact from "./pages/Contact";
+import Download from "./pages/Download";
+import Drivers from "./pages/Drivers";
+import TestimonialsPage from "./pages/TestimonialsPage";
+import Terms from "./pages/Terms";
+import Privacy from "./pages/Privacy";
+import { HelmetProvider } from "react-helmet-async";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -14,11 +24,24 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <HelmetProvider>
+          <Routes>
+            <Route element={<Layout />}>
+              <Route path="/" element={<Index />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/faqs" element={<FAQs />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/download" element={<Download />} />
+              <Route path="/drivers" element={<Drivers />} />
+              <Route path="/testimonials" element={<TestimonialsPage />} />
+              <Route path="/terms" element={<Terms />} />
+              <Route path="/privacy" element={<Privacy />} />
+            </Route>
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </HelmetProvider>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
