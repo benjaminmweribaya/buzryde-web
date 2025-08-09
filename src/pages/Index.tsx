@@ -1,6 +1,6 @@
 import { SEO } from "@/components/SEO";
 import { Hero } from "@/components/sections/Hero";
-import { Testimonials } from "@/components/sections/Testimonials";
+//import { Testimonials } from "@/components/sections/Testimonials";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Car, Handshake, ShieldCheck } from "lucide-react";
@@ -116,8 +116,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <Testimonials />
+      {/* <Testimonials /> */}  
     </div>
   );
 };
